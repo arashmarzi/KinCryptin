@@ -5,19 +5,19 @@
     ],
     "companyName": "arash.marzi@gmail.com",
     "enableMultiJS": true,
-    "longName": "KinCrytin",
+    "longName": "KinCryptin",
     "projectType": "native",
     "resources": {
         "media": []
     },
     "sdkVersion": "3",
-    "shortName": "Shacel",
+    "shortName": "KinCryptin",
     "targetPlatforms": [
         "aplite",
         "basalt",
         "chalk"
     ],
-    "uuid": "330decac-09d2-4eed-8750-dc0fa5c4c558",
+    "uuid": "94c635e7-4393-4d52-9a79-0c77e4fc0298",
     "versionLabel": "1.0",
     "watchapp": {
         "watchface": false
