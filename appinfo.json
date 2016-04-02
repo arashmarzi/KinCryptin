@@ -1,0 +1,25 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "arash.marzi@gmail.com",
+    "enableMultiJS": true,
+    "longName": "KinCrytin",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "Shacel",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "330decac-09d2-4eed-8750-dc0fa5c4c558",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
