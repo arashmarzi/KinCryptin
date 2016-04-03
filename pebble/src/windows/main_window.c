@@ -21,8 +21,17 @@ static void packets_per_second_handler(void *context) {
     text_layer_set_text(s_text_layer, s_buff);
   }
   total = s_send_counter*5 + total;
-  if (total <= 256)
-  {s_sending = false;}
+  if (total >= 256)
+  { s_sending = false;
+
+    accel_data_service_unsubscribe();
+
+    text_layer_set_text(s_text_layer, "Stopped");
+    if(s_packets_per_second_timer) {
+      app_timer_cancel(s_packets_per_second_timer);
+      s_packets_per_second_timer = NULL;
+      
+    }
   s_send_counter = 0;
   app_timer_register(1000, packets_per_second_handler, NULL);
 }
