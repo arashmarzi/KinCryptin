@@ -12,9 +12,6 @@ static int s_send_counter, s_packets_per_second;
 static int total = 0;
 
 static void packets_per_second_handler(void *context) {
-  total = s_send_counter*5 + totalPackets;
-  if (totalPackets >= 256)
-  {s_sending = false;}
   s_packets_per_second = s_send_counter;
   const int samples_per_second = s_packets_per_second * SAMPLES_PER_UPDATE;
   
@@ -23,7 +20,9 @@ static void packets_per_second_handler(void *context) {
     snprintf(s_buff, sizeof(s_buff), "%d packets/s\n(%d samples/s)", s_packets_per_second, samples_per_second);
     text_layer_set_text(s_text_layer, s_buff);
   }
-
+  total = s_send_counter*5 + total;
+  if (total <= 256)
+  {s_sending = false;}
   s_send_counter = 0;
   app_timer_register(1000, packets_per_second_handler, NULL);
 }
