@@ -9,11 +9,15 @@ static AppTimer *s_packets_per_second_timer;
 
 static bool s_sending;
 static int s_send_counter, s_packets_per_second;
+static int total = 0;
 
 static void packets_per_second_handler(void *context) {
+  total = s_send_counter*5 + totalPackets;
+  if (totalPackets >= 256)
+  {s_sending = false;}
   s_packets_per_second = s_send_counter;
   const int samples_per_second = s_packets_per_second * SAMPLES_PER_UPDATE;
-
+  
   if(s_sending) {
     static char s_buff[32];
     snprintf(s_buff, sizeof(s_buff), "%d packets/s\n(%d samples/s)", s_packets_per_second, samples_per_second);
